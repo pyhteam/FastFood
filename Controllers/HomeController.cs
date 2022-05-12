@@ -1,4 +1,5 @@
-﻿using FastFood.Models;
+﻿using FastFood.Data;
+using FastFood.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,18 @@ namespace FastFood.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly FastFoodDbContext context;
+        public HomeController(ILogger<HomeController> logger, FastFoodDbContext context)
         {
+            this.context = context;
             _logger = logger;
+
         }
 
         public IActionResult Index()
         {
-            return View();
+            var foods = context.Foods.ToList();
+            return View(foods);
         }
 
         public IActionResult Privacy()

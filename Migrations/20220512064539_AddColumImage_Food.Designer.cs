@@ -4,14 +4,16 @@ using FastFood.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FastFood.Migrations
 {
     [DbContext(typeof(FastFoodDbContext))]
-    partial class FastFoodDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220512064539_AddColumImage_Food")]
+    partial class AddColumImage_Food
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,12 +31,11 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 336, DateTimeKind.Local).AddTicks(2972));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 352, DateTimeKind.Local).AddTicks(3031));
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Slug")
@@ -45,61 +46,11 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 355, DateTimeKind.Local).AddTicks(9123));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 373, DateTimeKind.Local).AddTicks(145));
 
                     b.HasKey("Id");
 
                     b.ToTable("CategoryFoods");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Thức uống",
-                            Slug = "thuc-uong",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Đồ ăn",
-                            Slug = "do-an",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Đồ uống",
-                            Slug = "do-uong",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Đô ăn nhẹ",
-                            Slug = "do-an-nhe",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Đô tráng miệng",
-                            Slug = "do-trang-mieng",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Đồ ăn nhanh",
-                            Slug = "do-an-nhanh",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("FastFood.Models.CategoryPost", b =>
@@ -112,12 +63,11 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 360, DateTimeKind.Local).AddTicks(5290));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 375, DateTimeKind.Local).AddTicks(6752));
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Slug")
@@ -128,53 +78,11 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 360, DateTimeKind.Local).AddTicks(6388));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 375, DateTimeKind.Local).AddTicks(7805));
 
                     b.HasKey("Id");
 
                     b.ToTable("CategoryPosts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Thể thao",
-                            Slug = "the-thao",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Sức khỏe",
-                            Slug = "suc-khoe",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Giải trí",
-                            Slug = "giai-tri",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Khoa học",
-                            Slug = "khoa-hoc",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Thế giới",
-                            Slug = "the-gioi",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("FastFood.Models.Comment", b =>
@@ -186,15 +94,14 @@ namespace FastFood.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 364, DateTimeKind.Local).AddTicks(8241));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 381, DateTimeKind.Local).AddTicks(1794));
 
-                    b.Property<int?>("ParentId")
+                    b.Property<int>("ParentId")
                         .HasColumnType("int");
 
                     b.Property<int>("PostId")
@@ -203,7 +110,7 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 365, DateTimeKind.Local).AddTicks(2541));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 381, DateTimeKind.Local).AddTicks(3613));
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -217,45 +124,6 @@ namespace FastFood.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Content = "Tin hay quá",
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 446, DateTimeKind.Local).AddTicks(3068),
-                            PostId = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Content = "Bài viết rất tốt",
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 446, DateTimeKind.Local).AddTicks(3572),
-                            PostId = 2,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Content = "Bài viết rất tốt nha",
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 446, DateTimeKind.Local).AddTicks(3582),
-                            PostId = 2,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Content = "Cho mình xin thông tin với",
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 446, DateTimeKind.Local).AddTicks(9145),
-                            ParentId = 2,
-                            PostId = 2,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 3
-                        });
                 });
 
             modelBuilder.Entity("FastFood.Models.Food", b =>
@@ -271,11 +139,10 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 384, DateTimeKind.Local).AddTicks(813));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 394, DateTimeKind.Local).AddTicks(1458));
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
@@ -285,10 +152,9 @@ namespace FastFood.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(250)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int?>("OrderId")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -302,13 +168,12 @@ namespace FastFood.Migrations
                     b.Property<string>("Summary")
                         .IsRequired()
                         .HasMaxLength(250)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 384, DateTimeKind.Local).AddTicks(2326));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 394, DateTimeKind.Local).AddTicks(2447));
 
                     b.HasKey("Id");
 
@@ -317,34 +182,6 @@ namespace FastFood.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("Foods");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryFoodId = 2,
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 447, DateTimeKind.Local).AddTicks(6893),
-                            Description = "Cơm chiên là một món ăn được làm từ các nguyên liệu như cơm, đậu phụ, thịt bò, thịt gà, thịt gà và thịt nguội.",
-                            Image = "comchien.jpg",
-                            Name = "Cơm chiên",
-                            Price = 100000m,
-                            Slug = "com-chien",
-                            Summary = "Cơm chiên là một món ăn được làm từ các nguyên liệu như cơm, đậu phụ, thịt bò, thịt gà, thịt gà và thịt nguội.",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryFoodId = 2,
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 447, DateTimeKind.Local).AddTicks(7465),
-                            Description = "Người bệnh tiểu đường loại hai thường xuyên đi bộ, đạp xe, bơi lội, tập thể dục nhịp điệu có thể kiểm soát đường huyết và cân nặng.",
-                            Image = "Banh-socola.jpg",
-                            Name = "Bánh Socola",
-                            Price = 90000m,
-                            Slug = "banh-socola",
-                            Summary = "Người bệnh tiểu đường loại hai thường xuyên đi bộ, đạp xe, bơi lội, tập thể dục nhịp điệu",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("FastFood.Models.Order", b =>
@@ -360,7 +197,7 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 389, DateTimeKind.Local).AddTicks(9134));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 401, DateTimeKind.Local).AddTicks(579));
 
                     b.Property<int>("OrderType")
                         .HasColumnType("int");
@@ -374,7 +211,7 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 390, DateTimeKind.Local).AddTicks(44));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 401, DateTimeKind.Local).AddTicks(1861));
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -403,7 +240,7 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 409, DateTimeKind.Local).AddTicks(7282));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 410, DateTimeKind.Local).AddTicks(4007));
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -422,13 +259,12 @@ namespace FastFood.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(250)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 409, DateTimeKind.Local).AddTicks(8182));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 410, DateTimeKind.Local).AddTicks(5179));
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -440,34 +276,6 @@ namespace FastFood.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryPostId = 1,
-                            Content = "Người bệnh tiểu đường loại hai thường xuyên đi bộ, đạp xe, bơi lội, tập thể dục nhịp điệu có thể kiểm soát đường huyết và cân nặng.",
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 445, DateTimeKind.Local).AddTicks(9988),
-                            Image = "post1.jpg",
-                            Slug = "10-mon-the-thao-cho-nguoi-benh-tieu-duong",
-                            Summary = "tom tat",
-                            Title = "10 môn thể thao cho người bệnh tiểu đường",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryPostId = 2,
-                            Content = "Nguyên nhân gây bệnh tiểu đường là những nguyên nhân gây bệnh tiểu đường như sau:",
-                            CreatedAt = new DateTime(2022, 5, 12, 14, 5, 27, 446, DateTimeKind.Local).AddTicks(574),
-                            Image = "post2.jpg",
-                            Slug = "nguyen-nhan-gay-benh-tieu-duong",
-                            Summary = "Tom tat",
-                            Title = "Nguyên nhân gây bệnh tiểu đường",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1
-                        });
                 });
 
             modelBuilder.Entity("FastFood.Models.User", b =>
@@ -480,13 +288,12 @@ namespace FastFood.Migrations
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasMaxLength(250)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 417, DateTimeKind.Local).AddTicks(1644));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 417, DateTimeKind.Local).AddTicks(2854));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -496,13 +303,11 @@ namespace FastFood.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
@@ -527,55 +332,11 @@ namespace FastFood.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 12, 14, 5, 27, 417, DateTimeKind.Local).AddTicks(2815));
+                        .HasDefaultValue(new DateTime(2022, 5, 12, 13, 45, 38, 417, DateTimeKind.Local).AddTicks(3405));
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "123 Nguyen Van Linh, Quang Nam",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "mssen@gmail.com",
-                            FirstName = "MS",
-                            LastName = "Sen",
-                            Password = "e10adc3949ba59abbe56e057f20f883e",
-                            Phone = "098763543",
-                            Role = 2,
-                            Status = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Address = "123 Nguyen Van Linh, Quang Nam",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "nguyenvandinh@gmail.com",
-                            FirstName = "Nguyen Van",
-                            LastName = "Dinh",
-                            Password = "e10adc3949ba59abbe56e057f20f883e",
-                            Phone = "098565543",
-                            Role = 0,
-                            Status = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Address = "123 Nguyen Van Linh, Quang Nam",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "tranthithuy@gmail.com",
-                            FirstName = "Tran Thi",
-                            LastName = "Thuy",
-                            Password = "e10adc3949ba59abbe56e057f20f883e",
-                            Phone = "098762543",
-                            Role = 0,
-                            Status = 1,
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("FastFood.Models.Comment", b =>
@@ -583,7 +344,8 @@ namespace FastFood.Migrations
                     b.HasOne("FastFood.Models.Comment", "Parent")
                         .WithMany("Comments")
                         .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("FastFood.Models.Post", "Post")
                         .WithMany("Comments")
@@ -615,7 +377,8 @@ namespace FastFood.Migrations
                     b.HasOne("FastFood.Models.Order", "Order")
                         .WithMany("Foods")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CategoryFood");
 

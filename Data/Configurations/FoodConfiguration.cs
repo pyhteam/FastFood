@@ -10,12 +10,14 @@ namespace FastFood.Data.Configurations
         public void Configure(EntityTypeBuilder<Food> builder)
         {
             builder.HasKey(a => a.Id);
-            builder.Property(a => a.Name).IsRequired().HasMaxLength(250);
+            builder.Property(a => a.Name).IsRequired().HasMaxLength(250).IsUnicode();
             builder.Property(a => a.Slug).IsRequired().HasMaxLength(250);
-            builder.Property(a => a.Summary).IsRequired().HasMaxLength(250);
-            builder.Property(a => a.Description).IsRequired();
+            builder.Property(a => a.Summary).IsRequired().HasMaxLength(250).IsUnicode();
+            builder.Property(a => a.Description).IsRequired().IsUnicode();
             builder.Property(a => a.Price).IsRequired();
+            builder.Property(a => a.Image).IsRequired();
             builder.Property(a => a.CategoryFoodId).IsRequired();
+
             builder.Property(x => x.CreatedAt).HasDefaultValue(DateTime.Now);
             builder.Property(x => x.UpdatedAt).HasDefaultValue(DateTime.Now);
             // foreign key

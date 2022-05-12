@@ -10,7 +10,7 @@ namespace FastFood.Data.Configurations
         public void Configure(EntityTypeBuilder<CategoryPost> builder)
         {
             builder.HasKey(a => a.Id);
-            builder.Property(a => a.Name).IsRequired().HasMaxLength(150);
+            builder.Property(a => a.Name).IsRequired().HasMaxLength(150).IsUnicode();
             builder.Property(a => a.Slug).IsRequired().HasMaxLength(150);
            
             builder.Property(x => x.CreatedAt).HasDefaultValue(DateTime.Now);

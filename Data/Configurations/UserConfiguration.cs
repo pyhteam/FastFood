@@ -11,11 +11,11 @@ namespace FastFood.Data.Configurations
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasKey(a => a.Id);
-            builder.Property(a => a.FirstName).IsRequired().HasMaxLength(100);
-            builder.Property(a => a.LastName).IsRequired().HasMaxLength(100);
+            builder.Property(a => a.FirstName).IsRequired().HasMaxLength(100).IsUnicode();
+            builder.Property(a => a.LastName).IsRequired().HasMaxLength(100).IsUnicode();
             builder.Property(a => a.Email).IsRequired().HasMaxLength(250);
             builder.Property(a => a.Password).IsRequired();
-            builder.Property(a => a.Address).IsRequired().HasMaxLength(250);
+            builder.Property(a => a.Address).IsRequired().HasMaxLength(250).IsUnicode();
             builder.Property(a => a.Phone).IsRequired().HasMaxLength(20);
 
             builder.Property(a=>a.Status).HasDefaultValue(EUserStatus.Pending);

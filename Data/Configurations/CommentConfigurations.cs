@@ -10,7 +10,7 @@ namespace FastFood.Data.Configurations
         public void Configure(EntityTypeBuilder<Comment> builder)
         {
             builder.HasKey(a => a.Id);
-            builder.Property(a => a.Content).IsRequired();
+            builder.Property(a => a.Content).IsRequired().IsUnicode();
 
             builder.Property(a => a.PostId).IsRequired();
             builder.Property(a => a.UserId).IsRequired();

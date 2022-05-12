@@ -16,6 +16,7 @@ namespace FastFood.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Seed();
 
 
         }

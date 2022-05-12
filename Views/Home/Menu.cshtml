@@ -24,7 +24,7 @@
                             <img src="~/images/menu4.jpg" alt="" class="@item.Slug" />
                             <div class="fs_menu_price">
                                 <span class="dish_rs">@string.Format("{0:0,0}", item.Price) VND</span>
-                                <a href="#" data-toggle="modal" data-target="#myModal">Add to cart <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                <a onclick="addToCart(@item.Id)" >Add to cart <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <h2><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" >@item.Name</a></h2>
@@ -49,3 +49,30 @@
             </div>
         </div>
     </section>
+    <script>
+        
+        function addToCart(id) {
+            $.ajax({
+                url: '/Order/AddToCart',
+                type: 'POST',
+                data: {
+                    foodId: id
+                },
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    if (data.status == 200) {
+                        alert('Thêm vào giỏ hàng thành công');
+                    }
+                    else {
+                        alert('Thêm vào giỏ hàng thất bại');
+                    }
+                },
+                error: function (data) {
+                    alert('Thêm vào giỏ hàng thất bại');
+                }
+            });
+
+
+        }
+    </script>

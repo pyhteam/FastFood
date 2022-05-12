@@ -1,0 +1,81 @@
+﻿@model List<FastFood.Models.CartView>;
+<section class="fs_about_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                @* Table *@
+                <div class="fs_table_wrapper">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tên Sản Phẩm</th>
+                                <th scope="col">Price</th>
+                                @*<th scope="col">Quantity</th>*@
+                                @*<th scope="col">Total</th>*@
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var cart in Model)
+                            {
+                                <tr id="cart_@cart.Id">
+                                    <td>@cart.Id</td>
+                                    <td>@cart.FoodName</td>
+                                    <td>@cart.Price</td>
+                                    @*<td>@cart.Amount</td>*@
+                                    @*<td>@cart.ToTalPrice</td>*@
+                                    <td>
+                                         <a onclick="removeCart(@cart.Id)"> <i class="fa-solid fa-trash-can"></i>  </a>   
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <button class="btn btn-primary" onclick="payment()"> <i class="fa-solid fa-credit-card"></i> Thanh Toan</button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<script>
+    function removeCart(id) {
+        $.ajax({
+            url: '/Order/RemoveCart',
+            type: 'POST',
+            data: {
+                id: id,
+            },
+            success: function(data) {
+                if (data.status == 200) {
+                    $('#cart_' + id).remove();
+                    alert(data.message);
+                }
+                else {
+                    alert(data.message);
+                }
+            }
+        });
+    }
+    function payment() {
+        $.ajax({
+            url: '/Order/Payment',
+            type: 'POST',
+            data: {
+                id: 1,
+            },
+            success: function(data) {
+                if (data.status == 200) {
+                    alert(data.message);
+                }
+                else{
+                    alert(data.message);
+                }
+            }
+        });
+    }
+</script>

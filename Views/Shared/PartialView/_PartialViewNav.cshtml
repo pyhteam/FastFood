@@ -19,7 +19,7 @@
                             <ul>
                                 <li><a href="/" class="ed_link">home</a></li>
 
-                                <li><a href="Home/Menu" class="ed_link">Menu</a></li>
+                                <li><a asp-action="Menu" asp-controller="Home" class="ed_link">Menu</a></li>
                                 <li><a href="Blog" class="ed_link">Blog</a></li>
 
 
@@ -37,7 +37,7 @@
 
                                     </li>
                                     <li>
-                                        <a href="Carts" class="ed_link"><i class="fa-solid fa-cart-arrow-down"></i> Carts <span>(1)</span></a>
+                                        <a asp-action="DetailCart" asp-controller="Order" class="ed_link"><i class="fa-solid fa-cart-arrow-down"></i> Carts <span>(1)</span></a>
                                     </li>
                                 }
                                 else
@@ -47,7 +47,7 @@
 
                                     </li>
                                     <li>
-                                        <a href="/Home/Register" >Đăng Kí</a>
+                                        <a asp-action="Register" asp-controller="Home" >Đăng Kí</a>
                                     </li>
                                 }
 

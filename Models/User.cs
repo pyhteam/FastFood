@@ -22,6 +22,7 @@ namespace FastFood.Models
         public EUserStatus Status { get; set; } = EUserStatus.Active;
         public List<Post> Posts { get; set; }
         public List<Order> Orders { get; set; }
+        public List<Cart> Carts { get; set; }
         public List<Comment> Comments { get; set; }
         public DateTime CreatedAt { get; set; } 
         public DateTime UpdatedAt { get; set; }

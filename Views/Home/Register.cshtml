@@ -1,0 +1,68 @@
+﻿@model FastFood.Models.User;
+
+<div class="modal-content order_form">
+    @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <strong>Error!</strong>@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+        </div>
+    }
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Register</h4>
+    </div>
+    <div class="modal-body">
+        <form method="post" asp-action="Register" asp-controller="Home">
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-field">
+                    <i class="fa fa-pencil"></i>
+                    <input class="form-control" type="text" placeholder="Tên Đầu" asp-for="FirstName">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-field">
+                    <i class="fa fa-pencil"></i>
+                    <input class="form-control" type="text" placeholder="Tến Cuối" asp-for="LastName">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-field">
+                    <i class="fa fa-phone"></i>
+                    <input class="form-control" type="text" placeholder="Số điện thoại" asp-for="Phone">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-field">
+                    <i class="fa fa-phone"></i>
+                    <input class="form-control" type="text" placeholder="Số điện thoại" asp-for="Address">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-field">
+                    <i class="fa fa-envelope-o"></i>
+                    <input class="form-control" type="email" placeholder="Email" asp-for="Email">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-field">
+                    <i class="fa fa-envelope-o"></i>
+                    <input class="form-control" type="password" placeholder="Mật khẩu" asp-for="Password">
+                    
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-field">
+                    <i class="fa fa-envelope-o"></i>
+                    <input class="form-control" type="password" placeholder="Nhập lại mật khẩu" asp-for="ConfirmPassword">
+                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="fs_modal_submit-button">
+                    <button type="submit" class="fs_btn" href="#">Đăng Kí</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

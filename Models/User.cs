@@ -1,6 +1,8 @@
 ﻿using FastFood.Uliti;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FastFood.Models
 {
@@ -13,12 +15,15 @@ namespace FastFood.Models
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Password { get; set; }
-        public ERoles Role  { get; set; }
-        public EUserStatus Status  { get; set; }
+        [Compare("Password")]
+        [NotMapped]
+        public string ConfirmPassword { get; set; }
+        public ERoles Role { get; set; } = ERoles.Member;
+        public EUserStatus Status { get; set; } = EUserStatus.Active;
         public List<Post> Posts { get; set; }
         public List<Order> Orders { get; set; }
         public List<Comment> Comments { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } 
         public DateTime UpdatedAt { get; set; }
     }
 }

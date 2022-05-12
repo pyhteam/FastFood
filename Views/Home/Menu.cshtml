@@ -1,0 +1,51 @@
+﻿@model List<FastFood.Models.Food>
+    <!--section2-start-->
+    <section class="brd_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div>
+                        <h1>menu</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--section3-start-->
+    <section class="fs_menu_list">
+        <div class="container">
+            <div class="row">
+                
+                @foreach (var item in Model)
+               {
+                   <div class="col-lg-3 col-md-3 col-sm-4">
+                    <div class="fs_menu_box">
+                        <div class="fs_menu_img">
+                            <img src="~/images/menu4.jpg" alt="" class="@item.Slug" />
+                            <div class="fs_menu_price">
+                                <span class="dish_rs">@string.Format("{0:0,0}", item.Price) VND</span>
+                                <a href="#" data-toggle="modal" data-target="#myModal">Add to cart <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <h2><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" >@item.Name</a></h2>
+                    </div>
+                </div>
+               }
+                
+            </div>
+        </div>
+    </section>
+    <!--section4-start-->
+    <section class="editable fs_map_wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="map">
+                    <div class="ed_element_wrapper_map">
+                        <div id="hs_map" class="ed_map" data-address="address">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48630.85490218961!2d-111.83104849352239!3d40.377196268505074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d811acafcafed%3A0x85dd549fe5e139d4!2sAmerican+Fork%2C+UT+84003%2C+USA!5e0!3m2!1sen!2sin!4v1492068120481" style="border:0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
